@@ -1,0 +1,146 @@
+/* CineBook UI mockups. Everything is scoped to .cb so the same file can be inlined into other pages. */
+.cb {
+  --ink: #14172B; --paper: #F4F5FA; --card: #fff; --line: #E0E3EE; --muted: #5B617A;
+  --accent: #D7263D; --gold: #F2B134; --ok: #1B8A57; --warn: #A86A00; --bad: #C62828; --blue: #2447D6;
+  font: 14px/1.45 "DM Sans", system-ui, sans-serif;
+  color: var(--ink); background: var(--paper); color-scheme: light;
+  container-type: inline-size;
+}
+.cb *, .cb *::before, .cb *::after { box-sizing: border-box; }
+.cb h1, .cb h2, .cb h3 { font-family: "Bricolage Grotesque", "DM Sans", system-ui, sans-serif; margin: 0; line-height: 1.15; text-wrap: balance; }
+.cb h1 { font-size: 28px; } .cb h2 { font-size: 20px; } .cb h3 { font-size: 16px; }
+.cb p { margin: 0; }
+.cb a { color: inherit; text-decoration: none; }
+.cb .mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
+.cb .muted { color: var(--muted); }
+.cb .sm { font-size: 12px; }
+
+/* top bar */
+.cb .nav { display: flex; align-items: center; gap: 14px; padding: 12px 20px; background: var(--ink); color: #fff; flex-wrap: wrap; }
+.cb .logo { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 20px; }
+.cb .logo b { color: var(--gold); }
+.cb .city { border: 1px solid rgba(255,255,255,.35); border-radius: 8px; padding: 6px 10px; }
+.cb .search { flex: 1; min-width: 150px; background: rgba(255,255,255,.12); border-radius: 8px; padding: 8px 12px; color: #D5D9EE; }
+.cb .nav .links { display: flex; gap: 14px; align-items: center; }
+.cb .avatar { width: 30px; height: 30px; border-radius: 50%; background: var(--gold); color: var(--ink); display: grid; place-items: center; font-weight: 700; }
+
+.cb .wrap { padding: 20px; display: flex; flex-direction: column; gap: 20px; }
+.cb .row-between { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+/* posters */
+.cb .movies { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 16px; }
+.cb .poster { aspect-ratio: 2 / 3; border-radius: 10px; padding: 12px; display: flex; flex-direction: column; justify-content: flex-end; color: #fff; position: relative; overflow: hidden; }
+.cb .poster::before { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 35%, rgba(10,12,28,.78)); }
+.cb .poster > * { position: relative; }
+.cb .poster strong { font-family: "Bricolage Grotesque", sans-serif; font-size: 17px; line-height: 1.1; }
+.cb .poster span { font-size: 12px; opacity: .9; }
+.cb .poster .badge { position: absolute; top: 10px; left: 10px; background: rgba(255,255,255,.92); color: var(--ink); border-radius: 6px; padding: 1px 7px; font-size: 11px; font-weight: 700; }
+.cb .movie-title { margin-top: 8px; font-weight: 700; }
+
+/* chips, buttons, tags */
+.cb .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.cb .chip { border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; background: #fff; font-size: 13px; }
+.cb .chip.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+.cb .btn { display: inline-block; background: var(--accent); color: #fff; border-radius: 8px; padding: 10px 18px; font-weight: 700; text-align: center; }
+.cb .btn.ghost { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+.cb .btn.block { display: block; }
+.cb .tag { display: inline-block; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600; }
+.cb .tag.ok { background: #DDF3E8; color: #116B41; }
+.cb .tag.warn { background: #FCEBC8; color: #7A4B00; }
+.cb .tag.bad { background: #FBDADA; color: #9B1C1C; }
+.cb .tag.neu { background: #E8EAF3; color: #434A66; }
+
+.cb .panel { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+
+/* movie detail */
+.cb .hero { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 20px; align-items: start; }
+.cb .hero .poster { width: 150px; }
+.cb .hero .info { display: flex; flex-direction: column; gap: 10px; }
+.cb .dates { display: flex; gap: 8px; flex-wrap: wrap; }
+.cb .date { border: 1px solid var(--line); background: #fff; border-radius: 10px; padding: 6px 12px; text-align: center; min-width: 58px; }
+.cb .date b { display: block; font-size: 18px; font-family: "Bricolage Grotesque", sans-serif; }
+.cb .date.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+.cb .shows { display: flex; gap: 10px; flex-wrap: wrap; }
+.cb .show { display: inline-flex; flex-direction: column; align-items: center; border: 1.5px solid var(--ok); color: var(--ok); border-radius: 8px; padding: 6px 12px; font-weight: 700; }
+.cb .show small { font-weight: 400; color: var(--muted); font-size: 11px; }
+.cb .show.fast { border-color: var(--warn); color: var(--warn); }
+.cb .show.full { border-color: var(--line); color: #9AA0B5; text-decoration: line-through; }
+
+/* seat picker */
+.cb .layout2 { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 20px; align-items: start; }
+.cb .screen { margin: 0 auto 6px; width: 70%; height: 14px; border-top: 4px solid var(--ink); border-radius: 50% 50% 0 0 / 100% 100% 0 0; opacity: .55; }
+.cb .screen-lbl { text-align: center; font-size: 11px; letter-spacing: .2em; color: var(--muted); margin-bottom: 18px; }
+.cb .seatmap { display: flex; flex-direction: column; gap: 6px; align-items: center; overflow-x: auto; padding-bottom: 4px; }
+.cb .srow { display: flex; gap: 5px; align-items: center; }
+.cb .srow .lbl { width: 16px; font-size: 11px; color: var(--muted); text-align: center; }
+.cb .srow .aisle { width: 18px; }
+.cb .tier { font-size: 11px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin: 8px 0 0; align-self: center; }
+.cb .seat { width: 24px; height: 24px; border-radius: 6px 6px 3px 3px; border: 1.5px solid var(--blue); background: #fff; display: inline-block; flex: none; }
+.cb .seat.sel { background: var(--accent); border-color: var(--accent); }
+.cb .seat.bk { background: repeating-linear-gradient(45deg, #D4D7E3 0 3px, #ECEEF5 3px 6px); border-color: #B9BED0; }
+.cb .seat.hd { background: var(--gold); border-color: var(--gold); }
+.cb .legend { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 16px; font-size: 12px; color: var(--muted); }
+.cb .legend span { display: inline-flex; gap: 6px; align-items: center; }
+.cb .legend .seat { width: 16px; height: 16px; }
+.cb .kv { display: flex; justify-content: space-between; gap: 12px; }
+.cb .total { font-family: "Bricolage Grotesque", sans-serif; font-size: 24px; font-weight: 800; }
+.cb .timer { background: #FFF4DB; border: 1px solid #F2D58D; border-radius: 8px; padding: 8px 12px; color: #7A4B00; font-weight: 600; }
+.cb .note { background: #EEF1FF; border-radius: 8px; padding: 8px 12px; color: #2B3A8C; font-size: 13px; }
+
+/* ticket */
+.cb .ticket { display: grid; grid-template-columns: minmax(0, 1fr) 190px; background: #fff; border-radius: 14px; border: 1px solid var(--line); overflow: hidden; }
+.cb .ticket .main { padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.cb .ticket .stub { border-left: 2px dashed var(--line); padding: 18px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; background: #FAFBFE; }
+.cb .ticket .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.cb .ticket .grid2 b { display: block; }
+.cb .qr { width: 150px; height: 150px; }
+.cb .ok-banner { display: flex; gap: 10px; align-items: center; background: #DDF3E8; color: #0F5C39; padding: 12px 16px; border-radius: 10px; font-weight: 600; }
+
+/* tables */
+.cb .tbl { width: 100%; border-collapse: collapse; }
+.cb .tbl th { text-align: left; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; padding: 8px; border-bottom: 1px solid var(--line); font-weight: 600; }
+.cb .tbl td { padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.cb .tbl-scroll { overflow-x: auto; }
+.cb .tbl td.num, .cb .tbl th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+.cb .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.cb .stat { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+.cb .stat b { display: block; font: 800 24px "Bricolage Grotesque", sans-serif; font-variant-numeric: tabular-nums; }
+.cb .bar { height: 8px; border-radius: 4px; background: #E6E9F3; overflow: hidden; min-width: 80px; }
+.cb .bar i { display: block; height: 100%; background: var(--blue); }
+.cb .risk { display: inline-flex; gap: 6px; align-items: center; font-weight: 600; }
+.cb .why { font-size: 12px; color: var(--muted); }
+
+/* booking cards */
+.cb .bcard { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 14px; align-items: center; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+.cb .bcard .poster { width: 56px; padding: 0; border-radius: 8px; }
+.cb .bcard .poster::before { display: none; }
+
+/* staff scanner */
+.cb .scan { aspect-ratio: 1; background: #0B0D1A; border-radius: 14px; display: grid; place-items: center; position: relative; overflow: hidden; }
+.cb .scan .frame { width: 58%; aspect-ratio: 1; border: 3px solid var(--gold); border-radius: 14px; display: grid; place-items: center; }
+.cb .scan .line { width: 80%; height: 2px; background: var(--accent); box-shadow: 0 0 12px var(--accent); }
+.cb .res { border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 4px; }
+.cb .res.ok { background: #DDF3E8; border: 1px solid #9BD6B8; color: #0F5C39; }
+.cb .res.bad { background: #FBDADA; border: 1px solid #EBA3A3; color: #8E1818; }
+.cb .res b { font: 800 22px "Bricolage Grotesque", sans-serif; }
+
+/* phone frame */
+.cb.phone { width: 340px; max-width: 100%; margin: 0 auto; border: 8px solid #14172B; border-radius: 32px; overflow: hidden; }
+.cb.phone .nav { padding: 10px 14px; }
+.cb.phone .wrap { padding: 14px; }
+
+/* page-level helper used only by the standalone mockup pages */
+.mocknav { font: 13px/1.4 "DM Sans", system-ui, sans-serif; background: #fff; border-bottom: 1px solid #E0E3EE; padding: 8px 16px; display: flex; gap: 14px; flex-wrap: wrap; }
+.mocknav a { color: #2447D6; text-decoration: none; }
+.mocknav a[aria-current] { font-weight: 700; color: #14172B; }
+
+/* narrow containers (phones, small frames) */
+@container (max-width: 760px) {
+  .cb .layout2 { grid-template-columns: 1fr; }
+  .cb .hero { grid-template-columns: 110px minmax(0, 1fr); }
+  .cb .hero .poster { width: 110px; }
+  .cb .ticket { grid-template-columns: 1fr; }
+  .cb .ticket .stub { border-left: 0; border-top: 2px dashed var(--line); }
+  .cb .nav .links { display: none; }
+}
