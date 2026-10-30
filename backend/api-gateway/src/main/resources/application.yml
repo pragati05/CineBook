@@ -3,10 +3,6 @@ spring:
     name: api-gateway
   profiles:
     default: local
-  mongodb:
-    uri: ${MONGODB_URI:mongodb://localhost:27017/?replicaSet=rs0}
-  kafka:
-    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
 
 server:
-  port: 8080
+  port: ${SERVER_PORT:8080}
