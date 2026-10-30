@@ -1,4 +1,6 @@
-# CineBook
+<p align="center"><img src="ui/static/favicon.svg" alt="CineBook logo" width="72" height="72"></p>
+
+<h1 align="center">CineBook</h1>
 
 Movie theatre seat booking where you reserve online, **pay at the venue**, and walk in with a QR ticket from your inbox.
 
