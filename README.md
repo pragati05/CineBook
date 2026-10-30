@@ -138,7 +138,7 @@ Configuration is by Spring profile. `local` is the default and needs no AWS cred
 | `KAFKA_BOOTSTRAP_SERVERS` | `localhost:9092` |
 | `SPRING_PROFILES_ACTIVE` | `local` |
 
-Run and test commands will be added when the workspace is created. Integration tests will use Testcontainers, so CI never depends on your local containers.
+Build and test with `cd backend && ./mvnw verify` (see [backend/README.md](backend/README.md)). Integration tests will use Testcontainers, so CI never depends on your local containers.
 
 ## Production on AWS
 

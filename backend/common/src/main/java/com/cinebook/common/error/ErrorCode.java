@@ -1,0 +1,13 @@
+package com.cinebook.common.error;
+
+public enum ErrorCode {
+  VALIDATION_FAILED,
+  UNAUTHENTICATED,
+  FORBIDDEN,
+  NOT_FOUND,
+  CONFLICT,
+  SEAT_UNAVAILABLE,
+  HOLD_EXPIRED,
+  RATE_LIMITED,
+  INTERNAL_ERROR
+}
