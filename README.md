@@ -166,8 +166,10 @@ The POC umbrella issue links every child issue.
 ## Contributing
 
 1. Pick an issue from the current milestone and comment to claim it.
-2. Branch from `main`, keep pull requests focused on one issue, and reference it (`Closes #n`).
+2. Branch from `develop`, keep pull requests focused on one issue, open them against `develop`, and reference the issue (`Closes #n`). `develop` is merged into `main` at each milestone.
 3. Add or update tests; CI must pass.
+
+Full workflow: [DEVELOPMENT.md](DEVELOPMENT.md).
 
 ## License
 
