@@ -1,0 +1,57 @@
+# Build output
+target/
+build/
+out/
+*.class
+*.jar
+*.war
+!gradle/wrapper/gradle-wrapper.jar
+!.mvn/wrapper/maven-wrapper.jar
+
+# Gradle / Maven
+.gradle/
+.mvn/timing.properties
+
+# Node / React
+node_modules/
+dist/
+.next/
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.eslintcache
+*.tsbuildinfo
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+.factorypath
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+application-local-secrets.*
+
+# Logs and runtime
+*.log
+logs/
+*.pid
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+
+# OS
+.DS_Store
+Thumbs.db
