@@ -150,8 +150,8 @@ Work is tracked in GitHub issues under three milestones:
 
 | Milestone | Focus |
 |---|---|
-| **M1 POC** (weeks 1-2) | One city, one theatre, end to end: browse, hold, book, email ticket, check in, deployed to AWS |
-| **M2 Core platform** (week 3) | Outbox and idempotency, cancellation and auto-release, reminders, staff scanner, admin tools, CI/CD |
+| **M1 POC** (weeks 1-2) | One city, one theatre, end to end: browse, hold, book, email ticket, check in, running locally |
+| **M2 Core platform** (week 3) | First AWS deployment, outbox and idempotency, cancellation and auto-release, reminders, staff scanner, admin tools, CI/CD |
 | **M3 Scale and AI** (week 4) | Multi-city and multi-theatre, layout designer, no-show prediction, natural-language search, IaC, load testing |
 
 The POC umbrella issue links every child issue.
