@@ -1,0 +1,8 @@
+spring:
+  mongodb:
+    uri: ${MONGODB_URI:mongodb://localhost:27017/?replicaSet=rs0}
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+  mail:
+    host: ${MAIL_HOST:localhost}
+    port: ${MAIL_PORT:1025}
