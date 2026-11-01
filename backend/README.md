@@ -40,7 +40,7 @@ Select a profile with `SPRING_PROFILES_ACTIVE` (default `local`). Every variable
 | Variable | Used by | Default |
 |---|---|---|
 | `SERVER_PORT` | all | port from the table above |
-| `MONGODB_URI` | all except `api-gateway` | `mongodb://localhost:27017/?replicaSet=rs0` |
+| `MONGODB_URI` | all except `api-gateway` | `mongodb://localhost:27017/<service>?replicaSet=rs0` (one database per service) |
 | `KAFKA_BOOTSTRAP_SERVERS` | catalog, booking, ticket, notification | `localhost:9092` |
 | `REDIS_HOST` | catalog, booking | `localhost` |
 | `REDIS_PORT` | catalog, booking | `6379` |
@@ -49,4 +49,4 @@ Select a profile with `SPRING_PROFILES_ACTIVE` (default `local`). Every variable
 
 **Mongo must run as a replica set** (`rs0`), even locally, because seat booking uses multi-document transactions. A standalone `mongod` will not work.
 
-To give each service its own database, put the name in the URI path, e.g. `mongodb://localhost:27017/booking?replicaSet=rs0`.
+The database name in the URI path is required; the local default uses the service name (`catalog`, `booking`, ...).
